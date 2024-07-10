@@ -1,0 +1,16 @@
+name: Hourly Job
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # 每小时的第 0 分钟触发一次
+
+jobs:
+  hourly-task:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Run a Python script
+      run: python script.py
